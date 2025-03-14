@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form | aysznsy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+  </head>
+<body>
+
+  <button id="showLoginBtn" class="sun-button">
+    <img src="icon.png" alt="icon" class="button-icon">
+  </button>
+  
+  <div id="loginForm" class="wrapper" style="display: none;">
+    <button id="closeLoginBtn" class="close-btn">X</button>  
+    
+    <img src="marginlogin.png" alt="Tarot Image" class="login-image"> 
+
+    <div id="liveClock" class="live-clock"></div>
+
+    <form action="">
+        <h1 class="login-title">Login to Unlock Your Future</h1> 
+
+        <div class="input-box">
+            <input type="text" placeholder="Username" required>
+            <i class='bx bxs-user'></i>
+        </div>
+
+        <div class="input-box">
+            <input type="password" placeholder="Password" required>
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+
+        <div class="remember-forgot">
+            <label><input type="checkbox">Remember Me</label>
+            <a href="#">Forgot Password</a>
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+
+        <div class="register-link">
+            <p>Don't have an account? <a href="#">Register</a></p>
+        </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

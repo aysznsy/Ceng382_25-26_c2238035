@@ -1,0 +1,211 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(background.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.sun-button {
+  width: 120px;
+  height: 120px;
+  background-color: #FFD700;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 1), 0 0 60px rgba(255, 215, 0, 0.6);
+  cursor: pointer;
+  position: relative;
+  animation: rotateSun 5s linear infinite, pulseSun 1.5s ease-out infinite;
+}
+
+
+#loginForm {
+  display: none;
+}
+
+.sun-button.hidden {
+  display: none;
+}
+
+.sun-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #FF8C00;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button-icon {
+  width: 160%; 
+  height: 188px; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}  
+
+
+@keyframes rotateSun {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseSun {
+  0% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 1), 0 0 60px rgba(255, 215, 0, 0.6); 
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(255, 215, 0, 1), 0 0 100px rgba(255, 215, 0, 0.8); 
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 1), 0 0 60px rgba(255, 215, 0, 0.6); 
+  }
+}
+
+
+.wrapper {
+  width: 360px; 
+  background: linear-gradient(135deg, #8B008B, #800000);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(9px);
+  color: #fff;
+  border-radius: 12px;
+  padding: 25px 30px; 
+}
+
+h1 {
+  font-family: 'Cinzel', serif; 
+  font-size: 36px;
+  text-align: center;
+  color: #FFFF00; 
+  font-style: italic; 
+  text-shadow: 0 0 5px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 255, 0, 0.6); 
+}
+
+.wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 40px;  
+  margin: 24px 0; 
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 1.6px solid rgba(255, 255, 255, .2); 
+  border-radius: 32px; 
+  font-size: 12.8px; 
+  color: #fff;
+  padding: 16px 36px 16px 16px;  
+}
+
+.input-box input::placeholder {
+  color: #fff;
+}
+
+.input-box i {
+  position: absolute;
+  right: 16px;  
+  top: 24%;  
+  transform: translate(-50%);
+  font-size: 16px; 
+}
+
+.wrapper .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.6px;  
+  margin: -12px 0 12px;  
+}
+
+.remember-forgot label input {
+  accent-color: #fff;
+  margin-right: 2.4px;  
+}
+
+.remember-forgot a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+.wrapper .btn {
+  width: 100%;
+  height: 36px;  
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 32px;  
+  box-shadow: 0 0 8px rgba(0, 0, 0, .1);  
+  cursor: pointer;
+  font-size: 12.8px; 
+  color: #333;
+  font-weight: 480;
+}
+
+.wrapper .register-link {
+  font-size: 11.6px;  
+  text-align: center;
+  margin: 16px 0 12px; 
+}
+
+.register-link p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 480; 
+}
+
+.register-link p a:hover {
+  text-decoration: underline;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px; 
+  right: 10px; 
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+.login-image {
+  width: 100px; 
+  height: auto; 
+  display: block; 
+  margin: 0 auto 20px; 
+}
+.live-clock {
+  font-family: 'Cinzel', serif;
+  font-size: 32px;  
+  text-align: center;
+  color: #FFFF00;
+  text-shadow: 0 0 5px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 255, 0, 0.6);
+  margin-bottom: 15px;
+}
+  .hidden {
+    display: none !important;
+}
