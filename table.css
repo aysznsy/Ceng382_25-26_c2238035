@@ -4,14 +4,14 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(135deg, #8B008B, #800000); /* Login'deki gibi mor-kırmızı geçişi */
-    color: #fff; /* Metin rengi beyaz */
+    background: linear-gradient(135deg, #8B008B, #800000); 
+    color: #fff; 
 }
 
 h2 {
     font-family: 'Cinzel', serif;
-    color: #FFFF00; /* Sarı başlık */
-    text-shadow: 0 0 5px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 255, 0, 0.6); /* Sarı gölge */
+    color: #FFFF00; 
+    text-shadow: 0 0 5px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 255, 0, 0.6); 
     margin-bottom: 20px;
 }
 
@@ -20,10 +20,10 @@ form {
     flex-direction: column;
     width: 300px;
     margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.1); /* Yarı saydam beyaz arka plan */
+    background-color: rgba(255, 255, 255, 0.1); 
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* İnce beyaz kenarlık */
+    border: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
 form label {
@@ -35,17 +35,17 @@ form input, form textarea {
     margin-top: 5px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 4px;
-    background-color: transparent; /* Şeffaf arka plan */
-    color: #fff; /* Metin rengi beyaz */
+    background-color: transparent; 
+    color: #fff; 
 }
 
 form input:focus, form textarea:focus {
-    border-color: #FFFF00; /* Odaklanıldığında sarı kenarlık */
+    border-color: #FFFF00; 
     outline: none;
 }
 
 form button {
-    background-color: #FFFF00; /* Sarı düğme */
+    background-color: #FFFF00; 
     color: #333;
     border: none;
     padding: 10px 15px;
@@ -58,9 +58,9 @@ table {
     border-collapse: collapse;
     width: 100%;
     max-width: 600px;
-    background-color: rgba(255, 255, 255, 0.1); /* Yarı saydam beyaz arka plan */
+    background-color: rgba(255, 255, 255, 0.1); 
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* İnce beyaz kenarlık */
+    border: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
 th, td {
@@ -70,18 +70,18 @@ th, td {
 }
 
 th {
-    background-color: rgba(255, 255, 255, 0.1); /* Yarı saydam beyaz başlık arka planı */
+    background-color: rgba(255, 255, 255, 0.1); 
 }
 
 tr:hover {
-    background-color: rgba(197, 126, 198, 0.448); /* Satır üzerine gelindiğinde hafif beyaz arka plan */
+    background-color: rgba(197, 126, 198, 0.448); 
 }
 body {
-    background-size: cover; /* Arka planın tüm alanı kaplamasını sağlar */
+    background-size: cover; 
 }
 
 .highlighted {
-    background-color: rgba(255, 255, 0, 0.2); /* Vurgulanan satır sarı arka plan */
-    border: 1px solid #FFFF00; /* Sarı kenarlık */
-    box-shadow: 0 0 5px rgba(255, 255, 0, 0.5); /* Sarı gölge */
+    background-color: rgba(255, 255, 0, 0.2); 
+    border: 1px solid #FFFF00; 
+    box-shadow: 0 0 5px rgba(255, 255, 0, 0.5); 
 }
