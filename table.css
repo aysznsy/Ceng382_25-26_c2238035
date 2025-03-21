@@ -1,0 +1,87 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #8B008B, #800000); /* Login'deki gibi mor-kırmızı geçişi */
+    color: #fff; /* Metin rengi beyaz */
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    color: #FFFF00; /* Sarı başlık */
+    text-shadow: 0 0 5px rgba(255, 255, 0, 1), 0 0 15px rgba(255, 255, 0, 0.6); /* Sarı gölge */
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Yarı saydam beyaz arka plan */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* İnce beyaz kenarlık */
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    background-color: transparent; /* Şeffaf arka plan */
+    color: #fff; /* Metin rengi beyaz */
+}
+
+form input:focus, form textarea:focus {
+    border-color: #FFFF00; /* Odaklanıldığında sarı kenarlık */
+    outline: none;
+}
+
+form button {
+    background-color: #FFFF00; /* Sarı düğme */
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.1); /* Yarı saydam beyaz arka plan */
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* İnce beyaz kenarlık */
+}
+
+th, td {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.1); /* Yarı saydam beyaz başlık arka planı */
+}
+
+tr:hover {
+    background-color: rgba(197, 126, 198, 0.448); /* Satır üzerine gelindiğinde hafif beyaz arka plan */
+}
+body {
+    background-size: cover; /* Arka planın tüm alanı kaplamasını sağlar */
+}
+
+.highlighted {
+    background-color: rgba(255, 255, 0, 0.2); /* Vurgulanan satır sarı arka plan */
+    border: 1px solid #FFFF00; /* Sarı kenarlık */
+    box-shadow: 0 0 5px rgba(255, 255, 0, 0.5); /* Sarı gölge */
+}
