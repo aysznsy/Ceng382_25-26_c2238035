@@ -1,25 +1,14 @@
-using System.ComponentModel.DataAnnotations;
-
-namespace Week5Project.Models
+public class ClassInformationModel
 {
-    public class ClassInformationModel
+    private static int _idCounter = 0;
+
+    public int Id { get; set; }
+    public string ClassName { get; set; } = string.Empty;
+    public int StudentCount { get; set; }
+    public string Description { get; set; } = string.Empty;
+
+    public ClassInformationModel()
     {
-        private static int _idCounter = 1;
-
-        public ClassInformationModel()
-        {
-            Id = _idCounter++;
-        }
-
-        public int Id { get; set; }
-
-        [Required]
-        public string ClassName { get; set; }
-
-        [Required]
-        [Range(1, 1000)]
-        public int StudentCount { get; set; }
-
-        public string Description { get; set; }
+        Id = ++_idCounter;
     }
 }
