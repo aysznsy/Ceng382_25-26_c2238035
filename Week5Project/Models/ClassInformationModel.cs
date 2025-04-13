@@ -1,14 +1,30 @@
-public class ClassInformationModel
+using System.ComponentModel.DataAnnotations;
+
+namespace Database.Models
 {
-    private static int _idCounter = 0;
-
-    public int Id { get; set; }
-    public string ClassName { get; set; } = string.Empty;
-    public int StudentCount { get; set; }
-    public string Description { get; set; } = string.Empty;
-
-    public ClassInformationModel()
+    /*I took lots of the parts of this class from the chat gpt except DeclareID*/
+    public class ClassInformationModel
     {
-        Id = ++_idCounter;
+        private static int IDCounter = 1;
+        public int ID { get; private set; }
+        [Required]
+        public string? ClassName { get; set; }
+        [Required]
+        [Range(1, int.MaxValue)]
+        public int StudentCount { get; set; }
+        [Required]
+        public string? Description { get; set; }
+
+        public void SetID()
+        {
+            ID=IDCounter++;
+        }
+        public void DeclareID(int id)
+        {   
+            if (id+1 == IDCounter)
+            {
+                IDCounter--;
+            }
+        }
     }
 }
