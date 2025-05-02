@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Week5Project.Models;
 using Week5Project.Helpers;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+using System.Text.Json;
 using System.Linq;
 
 namespace Week5Project.Pages
@@ -28,8 +31,28 @@ namespace Week5Project.Pages
 
         public List<int> FilteredClassIds { get; set; } = new List<int>();
 
-        public void OnGet()
+        private bool IsUserAuthenticated()
         {
+            var sessionToken = HttpContext.Session.GetString("token");
+            var cookieToken = Request.Cookies["AuthToken"];
+
+            var sessionUsername = HttpContext.Session.GetString("username");
+            var cookieUsername = Request.Cookies["Username"];
+
+            var sessionId = HttpContext.Session.GetString("session_id");
+            var cookieSessionId = Request.Cookies["SessionId"];
+
+            return !string.IsNullOrEmpty(sessionToken) &&
+                   sessionToken == cookieToken &&
+                   sessionUsername == cookieUsername &&
+                   sessionId == cookieSessionId;
+        }
+
+        public IActionResult OnGet()
+        {
+            if (!IsUserAuthenticated())
+                return RedirectToPage("/Login");
+
             string[] classNames = { "MIS", "CENG", "SENG", "MAN" };
             string[] descriptions = { "Management Information Systems", "Computer Engineering", "Software Engineering", "Management" };
 
@@ -80,10 +103,15 @@ namespace Week5Project.Pages
                 .ToList();
 
             FilteredClasses = paginated;
+
+            return Page();
         }
 
         public IActionResult OnGetEdit(int id)
         {
+            if (!IsUserAuthenticated())
+                return RedirectToPage("/Login");
+
             var classToEdit = Classes.FirstOrDefault(c => c.Id == id);
             if (classToEdit != null)
             {
@@ -97,6 +125,9 @@ namespace Week5Project.Pages
 
         public IActionResult OnPost()
         {
+            if (!IsUserAuthenticated())
+                return RedirectToPage("/Login");
+
             if (!ModelState.IsValid)
                 return Page();
 
@@ -122,6 +153,9 @@ namespace Week5Project.Pages
 
         public IActionResult OnPostDelete(int id)
         {
+            if (!IsUserAuthenticated())
+                return RedirectToPage("/Login");
+
             var item = Classes.FirstOrDefault(c => c.Id == id);
             if (item != null)
             {
@@ -132,6 +166,9 @@ namespace Week5Project.Pages
 
         public IActionResult OnGetExportJson(bool isFiltered, string selectedColumns, string? filterClassName)
         {
+            if (!IsUserAuthenticated())
+                return RedirectToPage("/Login");
+
             var columnList = (selectedColumns ?? "")
                 .Split(',', StringSplitOptions.RemoveEmptyEntries)
                 .Select(c => c.Trim())
