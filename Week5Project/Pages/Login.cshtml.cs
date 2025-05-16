@@ -13,7 +13,6 @@ public class LoginModel : PageModel
 
     public IActionResult OnGet()
     {
-        // Kullanıcı zaten giriş yaptıysa, tekrar login olmasın
         var sessionToken = HttpContext.Session.GetString("token");
         var cookieToken = Request.Cookies["AuthToken"];
 
